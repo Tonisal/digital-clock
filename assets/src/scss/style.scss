@@ -1,0 +1,145 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+html {
+  margin: 0;
+  font-size: calc(10em / 16);
+}
+
+.clock-container {
+  background-color: #000;
+  padding: 5rem;
+
+  .clock {
+    display: flex;
+  }
+
+  .digits {
+    display: flex;
+
+    &:not(:last-child) {
+      margin-right: 5rem;
+    }
+
+    > div {
+      margin-right: 2rem;
+    }
+  }
+
+  .digit-part {
+    height: 10rem;
+    width: 10rem;
+    border: 2rem solid #ff0000;
+
+    &.digit-part--bottom {
+      border-top: 0;
+      height: 8rem; //Since we have no border-top here, the containers height is 2rem lower than normal
+    }
+  }
+
+  .u-no-border-top {
+    border-top: 0;
+  }
+
+  .u-no-border-right {
+    border-right: 0;
+  }
+
+  .u-no-border-bottom {
+    border-bottom: 0;
+  }
+
+  .u-no-border-left {
+    border-left: 0;
+  }
+}
+
+.clock-container-2 {
+  .clock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 30rem;
+    height: 30rem;
+    border-radius: 50%;
+    border: 0.5rem solid black;
+  }
+
+  .middle {
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: black;
+    border-radius: 50%;
+  }
+
+  .digit {
+    position: absolute;
+    font-size: 3rem;
+
+    &.digit-12 {
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    &.digit-3 {
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &.digit-6 {
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    &.digit-9 {
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+
+    }
+  }
+
+  .pointer {
+    position: absolute;
+    display: inline-block;
+    transform-origin: left;
+    left: 50%;
+  }
+
+  .seconds-pointer {
+    width: 11.5rem;
+    height: 0.2rem;
+    background-color: red;
+    //transition: transform 0.2s linear;
+  }
+
+  .minutes-pointer {
+    width: 13rem;
+    height: 0.3rem;
+    background-color: black;
+  }
+
+  .hours-pointer {
+    width: 9rem;
+    height: 0.6rem;
+    background-color: black;
+  }
+}
+
+
+
+
+
+
